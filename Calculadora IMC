@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora IMC Simples</title>
+        <script type="text/javascript">
+        
+        function calcular(){
+
+            var formulario = document.getElementById("formulario");
+
+            var peso= +formulario.peso.value;
+            var altura = +formulario.altura.value;
+            var imc = peso / (altura*altura);
+
+            formulario.imc.value = imc.toFixed(2);
+
+
+            if( imc<18) {
+                alert('Magreza');
+            }
+             
+            else if (imc>18 && imc<=25) {
+                alert('IMC Ideal');
+            }
+            else if(imc >25 && imc <= 30)
+    		{
+    			alert("Sobrepeso");
+    		}
+    		else if(imc >30 && imc <= 35)
+    		{
+    			alert("Obesidade Moderada");
+    		}
+    		else if(imc >35 && imc <= 40)
+    		{
+    			alert("Obesidade Severa");
+    		}
+    		else if(imc >40)
+    		{
+    			alert("Obesidade Mórbida");
+    		}
+        
+        }
+        
+        </script>
+    </head>
+    <body>
+        <div class="bc">
+        <form id="formulario">
+            <fieldset>
+                <legend>Calculadora IMC Básica</legend>
+                <label for="peso">Peso em Quilos</label>
+                <input name="peso" type=text>
+                <label for="altura">Altura em metros </label>
+                <input name="altura" type=text>
+                <label for ="imc">Seu IMC</label>
+                <input name="imc" type=text disabled>
+
+                <a href="#" onclick="calcular();">Calcular</a>
+            </fieldset>
+        </form>
+    </div>
+
+    <div>
+        <style>
+            .bc{
+                background-color: aquamarine;
+                text-align: center;
+                margin-top: 25%;
+               
+            }
+            
+        </style>
+    </div>
+    
+    </body>
+</html>
